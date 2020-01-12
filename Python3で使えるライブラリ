@@ -1,0 +1,5 @@
+Python3 (3.4.3)	
+
+Python2 / Python3	scikits	apt-get install python-scikits-learn で入るもの
+Python3	numpy	apt-get install python3-numpy で入るもの
+Python3	scipy	apt-get install python3-scipy で入るもの
