@@ -1,29 +1,24 @@
-import math
-import numpy as np
-
 n,a,b = map(int,input().split())
 
-def conbination(n,r):
-    return math.factorial(n) / math.factorial(r) / math.factorial(n - r)
+mod = 10**9 + 7
 
-if n-a <= a:
-    a = n-a
-if n-b <= b:
-    b = n-b
+def comb(n:int,k:int,MOD:int):
+    """return nCk (mod MOD)
+    """
+    nCk = 1
+    # n!/(n-k)!
+    for i in range(n-k+1, n+1):
+        nCk *= i
+        nCk %= MOD
+    # 1/k!
+    for i in range(1,k+1):
+        nCk *= pow(i,MOD-2,MOD)
+        nCk %= MOD
+    return nCk
 
-if n%2 == 0:
-    arr = np.zeros(int(n/2)+1)
-    arr[0] = 1
-    for i in range(1,int(n/2)+1):
-        arr[i] = conbination(n,i)
-    answer = sum(arr)*2 - arr[a] - arr[b] -arr[int(n/2)] -1
-else:
-    arr = np.zeros(int(n/2)+2)
-    arr[0] = 1
-    for i in range(1,int(n/2)):
-        arr[i] = conbination(n,i)
-    answer = sum(arr)*2 - arr[a] - arr[b] -1
-
-answer = int(answer % (10^9+7))
+all = pow(2,n,mod)-1
+comb_a = comb(n,a,mod)
+comb_b = comb(n,b,mod)
+answer = (all -comb_a -comb_b) % mod
 
 print(answer)
