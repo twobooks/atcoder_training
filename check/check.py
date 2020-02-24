@@ -7,7 +7,7 @@ import sklearn as skl
 
 # 入力の受け取り
 n = int(input())
-n,k = map(n,r = map(int,input().split())
+n,k = map(int,input().split())
 
 arr = np.array(input().split(),dtype=np.int64)
 
@@ -41,6 +41,12 @@ def comb(n:int,k:int,MOD:int):
 # 繰返し二乗法
 # pythonだと標準関数でOK
 pow(n,p,mod) # n:底、p:指数、mod:mod
+
+# 文字列の分割
+import re
+st = "???a?bb????ccc?"
+re.split("[a-z]",st)    #正規表現で指定してsplitできる
+max([len(i) for i in re.split("\?",st)])  #split後の文字数の最大値を求める
 
 
 
