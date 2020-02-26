@@ -1,9 +1,7 @@
 import math
-import os
 
 import numpy as np
 import scipy as scp
-import sklearn as skl
 
 # 入力の受け取り
 n = int(input())

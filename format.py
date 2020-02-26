@@ -7,7 +7,7 @@ import scipy as scp
 n = int(input())
 n,k = map(int,input().split())
 # 配列入力の受け取り
-arr = np.array(input().split(),dtype=np.int64)
+arrA = np.array(input().split(),dtype=np.int64)
 # 列ベクトルとかの受け取り
 H, W = map(int, input().split())
 S = []
