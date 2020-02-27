@@ -45,6 +45,7 @@ def comb(n:int,k:int,MOD:int):
 # 繰返し二乗法
 # pythonだと標準関数でOK
 pow(n,p,mod) # n:底、p:指数、mod:mod
+pow(n,mod-2,mod) # mod:modでのnの逆元
 
 # 文字列の分割
 import re

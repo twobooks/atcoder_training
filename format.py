@@ -1,4 +1,5 @@
 import math
+from fractions import gcd
 
 import numpy as np
 import scipy as scp
