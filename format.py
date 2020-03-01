@@ -1,4 +1,5 @@
 # import math
+# from itertools import permutations as permus
 # from fractions import gcd
 
 import numpy as np
