@@ -3,18 +3,6 @@ import math
 import numpy as np
 import scipy as scp
 
-# 入力の受け取り
-n = int(input())
-n,k = map(int,input().split())
-# 配列入力の受け取り
-arr = np.array(input().split(),dtype=np.int64)
-# 列ベクトルとかの受け取り
-H, W = map(int, input().split())
-S = []
-for _ in range(H):
-    S.append(input())  # S += [input()] とも書ける
-    # 整数として取り込むときは、 input() を int(input()) に置き換える。
-
 # 演算子
 a + b         # 加算
 a - b         # 減算
@@ -23,6 +11,7 @@ a / b         # 除算
 a % b         # a を b で割った余り
 a ** b        # a の b 乗
 a // b        # 切り捨て除算
+divmod(x,y)   # 商と余りを返す
 
 # コンソールのクリア
 os.sysytem("cls")
@@ -53,6 +42,22 @@ st = "???a?bb????ccc?"
 re.split("[a-z]",st)    #正規表現で指定してsplitできる
 max([len(i) for i in re.split("\?",st)])  #split後の文字数の最大値を求める
 
+# continue,break,exit()
+import sys
+while True:
+  for i in range(10):
+    if i ==3:
+      continue # 以降の処理はスルーされて処理はfor文に戻る
+    # elif i == 7:
+    #   break # forループ自体(else文部分も含めて)が終了する
+    else:
+      print(i)
+  else:   # forループのイテレータが無くなったら実行されるforループのelse文
+    print("done")
+    exit()  # atcoderだとwhileループも含めて処理全終了になる。
+            # atcoder以外だとsys.exit()が無難。多分エラー出るけど
+  break # forループ終了後に実行されるwhileのbreak。whileループが終了する。
+    
 
 
 
