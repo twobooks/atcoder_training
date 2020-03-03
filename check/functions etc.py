@@ -16,6 +16,13 @@ divmod(x,y)   # 商と余りを返す
 # コンソールのクリア
 os.sysytem("cls")
 
+# lcm() 最小公倍数を返すやつ
+def lcm(x:int, y:int)->int:
+    """
+    return Least common multiple (最小公倍数)
+    """
+    return (x * y) // gcd(x, y)
+
 # 組合せの計算
 def comb(n:int,k:int,MOD:int):
     """return nCk (mod MOD)
