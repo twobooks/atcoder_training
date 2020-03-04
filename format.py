@@ -16,7 +16,7 @@ times = m
 table = []
 for _ in range(times):
     table.append(input())  # S += [input()] とも書ける
-    # table.append(list(input().split())) # 行列の場合
+    # table.append(list(map(int,input().split()))) # 行列の場合
     # 整数として取り込むときは、 input() を int(input()) に置き換える。
 
 strlist = "abcdefghijklmnopqrstuvwxyz"
