@@ -6,36 +6,26 @@ for _ in range(times):
     a = int(input())
     temp = []
     for _ in range(a):
-        temp.append(list(map(int,input().split())))
+        x , y = map(int,input().split())
+        temp.append([x-1,y])
     table.append(temp)  # S += [input()] とも書ける
     
 def check(i,n):
-    honestOrUnkind = [0]*n
-    honestOrUnkind[i] = 1
-    for item in table[i]:
-        membernum = item[0]-1
-        honestOrUnkind[membernum] = item[1]
-    for idx,hOrU in enumerate(honestOrUnkind):
-        if hOrU == 1:
-            for item in table[idx]:
-                membernum = item[0]-1
-                if honestOrUnkind[membernum] != item[1]:
-                    return False,honestOrUnkind
-                else:
-                    honestOrUnkind[membernum] = item[1]
-                    continue
-        else:
-            continue    
-    return True,honestOrUnkind
+    flg = True
+    for j in range(n):
+        if i>>j & 1:
+            for x,y in table[j]:
+                if (i>>x)%2 != y:
+                    flg = False
+                    # print(flg)
+                    return flg
+    # print(flg)
+    return flg
 
-member = [None]*n
+# print(table)
 ans = 0
-for i in range(n):
-    flg , memberlist = check(i,n)
-    if flg:
-        # member[i] = 1
-        ans = max(memberlist.count(1),ans)
-    else:
-        member[i] = 0
+for i in range(2**n):   #bit全探索
+    if check(i,n):
+        ans = max(bin(i).count("1"),ans)
 
 print(ans)
