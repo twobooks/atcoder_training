@@ -24,8 +24,16 @@ format(a,"04b") # intを4桁で2進数のstrに変換
 bin(a)        # intを2進数のstrに変換。頭に"0b"のプレフィックスが付く
 bin(a).count("1") # 2進数表記した時の1の数をカウントする
 
-
-
+# 約数の列挙
+def make_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divisors.append(i)
+            if i != n // i:
+                divisors.append(n//i)
+    # divisors.sort()
+    return divisors
 
 # コンソールのクリア
 os.sysytem("cls")

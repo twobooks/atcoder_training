@@ -1,6 +1,7 @@
 # import math
 # from itertools import permutations as permus
 # from fractions import gcd
+# from collections import deque
 
 import numpy as np
 # import scipy as scp
@@ -13,9 +14,9 @@ arrA = list(map(int,input().split()))
 arrA = np.array(input().split(),dtype=np.int64)
 # 列ベクトルとかの受け取り
 times = m
-table = []
+query_list = []
 for _ in range(times):
-    table.append(input())  # S += [input()] とも書ける
+    query_list += [input()]  #table.append(input())とも書ける
     # table.append(list(map(int,input().split()))) # 行列の場合
     # 整数として取り込むときは、 input() を int(input()) に置き換える。
 
