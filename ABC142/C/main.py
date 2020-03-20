@@ -9,18 +9,11 @@ import numpy as np
 
 # 入力の受け取り
 n = int(input())
-n,m = map(int,input().split())
 # 配列入力の受け取り
-arrA = list(map(int,input().split()))
 arrA = np.array(input().split(),dtype=np.int64)
-# 列ベクトルとかの受け取り
-times = m
-query_list = []
-for _ in range(times):
-    query_list += [input()]  #table.append(input())とも書ける
-    # table.append(list(map(int,input().split()))) # 行列の場合
-    # 整数として取り込むときは、 input() を int(input()) に置き換える。
 
-strlist = "abcdefghijklmnopqrstuvwxyz"
+ans = [0 for _ in range(n)]
+for i,v in enumerate(arrA):
+    ans[v-1] = i+1
 
-print(ans)
+print(*ans)
