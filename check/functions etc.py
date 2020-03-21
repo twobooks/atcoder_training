@@ -3,6 +3,10 @@ import math
 import numpy as np
 import scipy as scp
 
+# 辞書のソート
+# listで返ってくる。複数条件はkeyにlambdaで条件とする値をタプルで渡す
+ans = sorted(dic.items(),key=lambda x:(x[1][0],-x[1][1]))
+
 # 演算子
 a + b         # 加算
 a - b         # 減算
