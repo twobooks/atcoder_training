@@ -6,16 +6,19 @@
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
-# import numpy as np
+import numpy as np
 # import scipy as scp
 
-# strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
+# 入力の受け取り
 n = int(input())
-n,m = map(int,input().split())
 # 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+arrV = np.array(input().split(),dtype=np.int64)
+arrC = np.array(input().split(),dtype=np.int64)
+
+arrA = arrV - arrC
+
+filter = arrA > 0
+ans = sum(arrA[filter])
 
 print(ans)
 # print("{:.10f}".format(ans))

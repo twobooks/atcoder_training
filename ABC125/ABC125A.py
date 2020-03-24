@@ -9,13 +9,10 @@
 # import numpy as np
 # import scipy as scp
 
-# strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+# 入力の受け取り
+a,b,t = map(int,input().split())
+
+ans = t//a * b
 
 print(ans)
 # print("{:.10f}".format(ans))
