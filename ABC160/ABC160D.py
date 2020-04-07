@@ -1,7 +1,7 @@
 # from math import factorial,sqrt
 # from itertools import permutations as permus
 # from fractions import gcd
-from collections import deque,Counter
+# from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
@@ -11,23 +11,18 @@ from collections import deque,Counter
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-k = int(input())
+n,x,y = map(int,input().split())
 
-que = deque(range(1,10)) 
-for _ in range(k):
-    tmp = que.popleft()
-    if tmp % 10 !=0:
-        val = tmp*10 + (tmp%10) - 1
-        que.append(val)
-    val = tmp*10 + (tmp%10)
-    que.append(val)
-    if tmp%10 != 9:
-        val = tmp*10 + (tmp%10) + 1
-        que.append(val)
+ans = [0 for _ in range(n)]
 
-ans = tmp
-print(ans)
+for i in range(1,n):
+    for j in range(i+1,n+1):
+        kyori = min(j-i,abs(x-i)+1+abs(y-j),abs(i-y)+1+abs(x-j))
+        ans[kyori] +=1
+
+print(*ans[1:],sep="\n")
 # print("{:.10f}".format(ans))
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する
+

@@ -1,7 +1,7 @@
 # from math import factorial,sqrt
 # from itertools import permutations as permus
 # from fractions import gcd
-from collections import deque,Counter
+# from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
@@ -11,21 +11,12 @@ from collections import deque,Counter
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-k = int(input())
+n,k = map(int,input().split())
 
-que = deque(range(1,10)) 
-for _ in range(k):
-    tmp = que.popleft()
-    if tmp % 10 !=0:
-        val = tmp*10 + (tmp%10) - 1
-        que.append(val)
-    val = tmp*10 + (tmp%10)
-    que.append(val)
-    if tmp%10 != 9:
-        val = tmp*10 + (tmp%10) + 1
-        que.append(val)
+val1 = n % k
+val2 = abs(val1-k)
+ans = min(val1,val2)
 
-ans = tmp
 print(ans)
 # print("{:.10f}".format(ans))
 # print(*ans)   # unpackして出力。間にスペースが入る
