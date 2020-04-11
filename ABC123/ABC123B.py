@@ -1,4 +1,4 @@
-# from math import factorial,sqrt,ceil
+# from math import factorial,sqrt
 # from itertools import permutations as permus
 # from fractions import gcd
 # from collections import deque,Counter
@@ -11,13 +11,22 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+rows = [int(input()) for _ in range(5)]
+
+lis = []
+for num in rows:
+    if num%10 == 0:
+        lis.append(num)
+    else:
+        num = (num//10 + 1)*10
+        lis.append(num)
+
+snum = sum(lis)
+ans = snum
+for i in range(5):
+    var = snum - lis[i] + rows[i]
+    ans = min(ans,var)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -1,6 +1,6 @@
 # from math import factorial,sqrt,ceil
 # from itertools import permutations as permus
-# from fractions import gcd
+from fractions import gcd
 # from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
@@ -11,15 +11,23 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+a,b,k = map(int,input().split())
 
+def makedivs(n):
+    divs = []
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divs.append(i)
+            if i != n // i:
+                divs.append(n//i)
+    # divs.sort()
+    return divs
 
-print(ans)
+c = gcd(a,b)
+anslis = makedivs(c)
+anslis.sort()
+
+print(anslis[-k])
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

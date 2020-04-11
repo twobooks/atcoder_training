@@ -11,15 +11,18 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
 n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+ansset = set(range(1,m+1))
 
+times = n
+table = []
+for _ in range(times):
+    table.append(list(map(int,input().split()))) # 行列の場合
 
-print(ans)
+for lis in table:
+    ansset = ansset & set(lis[1:])
+
+print(len(ansset))
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

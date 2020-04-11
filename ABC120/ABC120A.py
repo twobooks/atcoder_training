@@ -11,13 +11,8 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
-
+a,b,c = map(int,input().split())
+ans = min(b//a,c)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -6,17 +6,22 @@
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
-# import numpy as np
+import numpy as np
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
 n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+times = n
+X = []
+U = []
+for _ in range(times):
+    x,u = input().split()
+    X.append(float(x))
+    u = 1 if u == "JPY" else 380000
+    U.append(u)
+
+ans = np.dot(np.array(X),np.array(U))
 
 
 print(ans)

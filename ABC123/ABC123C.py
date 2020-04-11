@@ -1,4 +1,4 @@
-# from math import factorial,sqrt,ceil
+from math import factorial,sqrt,ceil
 # from itertools import permutations as permus
 # from fractions import gcd
 # from collections import deque,Counter
@@ -11,13 +11,12 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+rows = [int(input()) for _ in range(6)]
+n,a,b,c,d,e = rows
+minvar = min(rows[1:])
+
+ans = ceil(n/minvar) + 4
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
