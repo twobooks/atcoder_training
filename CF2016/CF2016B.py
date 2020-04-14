@@ -1,4 +1,4 @@
-from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil
 # from itertools import permutations as permus
 # from fractions import gcd
 # from collections import deque,Counter
@@ -11,17 +11,24 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-K = int(input())
+N,A,B = map(int,input().split())
+S = input()
 
-ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+AplusB = A+B
 
-print(ans)
+ans = []
+for i in range(len(S)):
+    if S[i]=="a" and AplusB>0:
+        ans.append("Yes")
+        AplusB -= 1
+    elif S[i]=="b" and AplusB>0 and B>0:
+        ans.append("Yes")
+        AplusB -= 1
+        B -= 1
+    else:
+        ans.append("No")
+
+print(*ans,sep="\n")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

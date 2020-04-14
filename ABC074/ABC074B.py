@@ -1,6 +1,5 @@
-from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from fractions import gcd
 # from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
@@ -11,16 +10,16 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
+N = int(input())
 K = int(input())
+arrA = list(map(int,input().split()))
 
-ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+anslis = []
+for i in arrA:
+    num = min(i,K-i)
+    anslis.append(num)
 
+ans = sum(anslis)*2
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

@@ -1,6 +1,5 @@
-# from math import factorial,sqrt,ceil
+# from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from fractions import gcd
 # from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
@@ -11,9 +10,9 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
+S = input()
+N = int(input())
+N,M = map(int,input().split())
 # 配列入力の受け取り
 arrA = list(map(int,input().split()))
 # arrA = np.array(input().split(),dtype=np.int64)

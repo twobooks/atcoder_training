@@ -11,13 +11,11 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+n = input()
 
+ans = "No"
+if "7" in n:
+    ans = "Yes"
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

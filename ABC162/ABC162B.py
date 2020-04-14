@@ -11,13 +11,14 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
 n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+ans = 0
+for i in range(1,n+1):
+    if i%3==0 or i%5==0:
+        pass
+    else:
+        ans += i
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

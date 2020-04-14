@@ -1,6 +1,5 @@
-from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from fractions import gcd
 # from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
@@ -11,15 +10,16 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-K = int(input())
+N = int(input())
+arrA = list(map(int,input().split()))
+# arrA = np.array(input().split(),dtype=np.int64)
+arrA.sort()
+arrA = arrA[::-1]
 
-ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+Alice = sum(arrA[0::2])
+Bob = sum(arrA[1::2])
+
+ans = Alice-Bob
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -1,7 +1,8 @@
 # from math import factorial,sqrt,ceil
-# from itertools import permutations as permus
+from itertools import permutations as permus
 # from fractions import gcd
-# from collections import deque,Counter
+from collections import deque,Counter
+import re
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
@@ -11,14 +12,26 @@
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-s = input()
-n = int(input())
-n,m = map(int,input().split())
-# 配列入力の受け取り
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N = int(input())
+S = input()
 
+Sset = Counter(S)
+iter = permus(list("RGB")) 
 
+total = Sset["R"]*Sset["G"]*Sset["B"]
+
+Slen = len(S)
+hikukazu = 0
+for i in range(Slen):
+    for num in range(1,Slen//2+1):
+        j = i+num
+        k = i+num*2
+        if k>Slen-1:
+            break
+        if S[i]!=S[j] and S[i]!=S[k] and S[k]!=S[j]:
+            hikukazu += 1
+
+ans = total - hikukazu
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

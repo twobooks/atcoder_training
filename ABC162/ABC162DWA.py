@@ -1,7 +1,8 @@
-from math import factorial,sqrt,ceil,gcd
-# from itertools import permutations as permus
+# from math import factorial,sqrt,ceil
+from itertools import permutations as permus
 # from fractions import gcd
-# from collections import deque,Counter
+from collections import deque,Counter
+import re
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
@@ -11,16 +12,23 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-K = int(input())
+N = int(input())
+S = input()
 
-ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+Sset = Counter(S)
+iter = permus(list("RGB")) 
 
+total = Sset["R"]*Sset["G"]*Sset["B"]
+
+hikukazu = 0
+for s in iter:
+    for dot in range(2000):
+        word = s[0] + "."*dot + s[1] + "."*dot + s[2]
+        if len(word)>len(S):
+            break
+        hikukazu += len(re.findall(word,S))
+
+ans = total - hikukazu
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

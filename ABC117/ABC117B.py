@@ -1,4 +1,4 @@
-from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil
 # from itertools import permutations as permus
 # from fractions import gcd
 # from collections import deque,Counter
@@ -11,15 +11,16 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-K = int(input())
+n = int(input())
+arrL = list(map(int,input().split()))
 
-ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+longest = max(arrL)
+hokasum = sum(arrL) - longest
+
+if longest<hokasum:
+    ans = "Yes"
+else:
+    ans = "No"
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -1,6 +1,5 @@
-from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from fractions import gcd
 # from collections import deque,Counter
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
@@ -11,15 +10,22 @@ from math import factorial,sqrt,ceil,gcd
 # from scipy.sparse import csr_matrix
 
 # strlist = "abcdefghijklmnopqrstuvwxyz"
-K = int(input())
+A,B,C = map(int,input().split())
+lis = [A,B,C]
+lis.sort()
 
+check = [lis]
 ans = 0
-for i in range(1,K+1):
-    for j in range(1,K+1):
-        for k in range(1,K+1):
-            num = gcd(i,j)
-            num = gcd(num,k)
-            ans += num
+
+while not(check[-1][0]%2==1 or check[-1][1]%2==1 or check[-1][2]%2==1):
+    A,B,C = B//2 + C//2 , A//2 + C//2,B//2 + A//2
+    temp = [A,B,C]
+    temp.sort()
+    if temp in check:
+        print(-1)
+        exit()
+    check.append(temp)
+    ans += 1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
