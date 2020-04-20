@@ -9,15 +9,23 @@
 # import numpy as np
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
+from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,K = map(int,input().split())
 
+MOD = 10**9 + 7
+ans = 0
+lis = list(range(0,N+1))
 
+for i in range(K,N+1+1):
+    start = (i-1)*i//2
+    end = N*i - start
+    if end<=start:
+        start,end = end,start
+    num = end - start +1
+    ans += num
+ans %= MOD
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

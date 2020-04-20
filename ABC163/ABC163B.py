@@ -11,12 +11,11 @@
 # from scipy.sparse import csr_matrix
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
 N,M = map(int,input().split())
 arrA = list(map(int,input().split()))
 # arrA = np.array(input().split(),dtype=np.int64)
 
+ans = max(N - sum(arrA),-1)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

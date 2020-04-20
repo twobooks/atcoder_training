@@ -11,12 +11,12 @@
 # from scipy.sparse import csr_matrix
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B = map(int,input().split())
 
+ans = 0
+for i in range(A,B+1):
+    if str(i) == str(i)[::-1]:
+        ans +=1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

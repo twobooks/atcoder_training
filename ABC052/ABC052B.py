@@ -1,7 +1,6 @@
 # from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
 # from collections import deque,Counter
-# import re
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
@@ -10,13 +9,18 @@
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 
-# slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
+# strlist = "abcdefghijklmnopqrstuvwxyz"
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+S = input()
 
+x = 0
+ans = 0
+for i in range(N):
+    if S[i] == "I":
+        x += 1
+    else:
+        x -= 1
+    ans = max(ans,x)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -1,4 +1,4 @@
-# from math import factorial,sqrt,ceil,gcd
+# from math import factorial,sqrt,ceil,gcd,pi
 # from itertools import permutations as permus
 # from collections import deque,Counter
 # import re
@@ -11,12 +11,9 @@
 # from scipy.sparse import csr_matrix
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+R = int(input())
 
+ans = 2*R*3.14159265359
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

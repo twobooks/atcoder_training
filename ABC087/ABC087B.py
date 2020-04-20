@@ -10,13 +10,18 @@
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 
-# slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+# strlist = "abcdefghijklmnopqrstuvwxyz"
+A = int(input())
+B = int(input())
+C = int(input())
+X = int(input())
 
+ans = 0
+for en500 in range(A+1):
+    for en100 in range(B+1):
+        for en50 in range(C+1):
+            if en500*500 + en100*100 + en50*50 == X:
+                ans += 1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

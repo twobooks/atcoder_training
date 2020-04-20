@@ -12,11 +12,13 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+zerokara = S[0::2]
+onekara = S[1::2]
+
+ans1 = zerokara.count("1")+onekara.count("0")
+ans2 = zerokara.count("0")+onekara.count("1")
+ans = min(ans1,ans2)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

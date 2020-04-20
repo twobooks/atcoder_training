@@ -10,14 +10,16 @@
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 
-# slist = "abcdefghijklmnopqrstuvwxyz"
+slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+fulset = set(list(slist))
+Sset = set(list(S))
+kouho = fulset-Sset
 
+ans = "None"
+if len(kouho)!=0:
+    ans = min(kouho)
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

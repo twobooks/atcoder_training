@@ -11,14 +11,17 @@
 # from scipy.sparse import csr_matrix
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
 arrA = list(map(int,input().split()))
 # arrA = np.array(input().split(),dtype=np.int64)
 
+ans = [0] * (N+1)
 
-print(ans)
+for i in arrA:
+    ans[i] += 1
+
+ans = ans[1:]
+print(*ans,sep="\n")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

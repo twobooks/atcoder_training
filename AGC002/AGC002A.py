@@ -11,12 +11,19 @@
 # from scipy.sparse import csr_matrix
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+a,b = map(int,input().split())
 
+if a<0 and b<0:
+    if (b-a)%2==0:
+        ans = "Negative"
+    else:
+        ans = "Positive"
+elif a<0 and b>=0:
+    ans = "Zero"
+elif a==0:
+    ans = "Zero"
+else:
+    ans = "Positive"
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
