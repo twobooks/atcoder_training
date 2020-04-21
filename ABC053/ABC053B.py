@@ -15,12 +15,11 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+idxA = S.find("A") + 1
+idxB = len(S) - S[::-1].find("Z")
 
+ans = idxB - idxA + 1
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

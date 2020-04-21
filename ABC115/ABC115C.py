@@ -14,12 +14,14 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,K = map(int,input().split())
+arrH = [int(input()) for _ in range(N)]
+arrH.sort()
 
+ans = 10**9+1
+for i in range(N-K+1):
+    num = arrH[i+K-1] - arrH[i] 
+    ans = min(ans,num)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

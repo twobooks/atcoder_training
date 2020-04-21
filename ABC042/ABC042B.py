@@ -14,14 +14,12 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,L = map(int,input().split())
+Slist = [input() for _ in range(N)]
 
+Slist.sort()
 
-print(ans)
+print(*Slist,sep="")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

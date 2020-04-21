@@ -15,11 +15,14 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+T = input()
 
+ans = "No"
+for i in range(len(S)):
+    sline = S[-i:] + S[:-i]
+    if sline == T:
+        ans = "Yes"
+        break
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -14,12 +14,24 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
+arrW = [input() for _ in range(N)]
 # arrA = np.array(input().split(),dtype=np.int64)
 
+lis = []
+ans = "Yes"
+for i,w in enumerate(arrW):
+    # print(lis , w)
+    if i == 0:
+        lis.append(w)
+    else:
+        if arrW[i-1][-1] != arrW[i][0]:
+            ans = "No"
+            break
+        if arrW[i] in lis:
+            ans = "No"
+            break
+        lis.append(w)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

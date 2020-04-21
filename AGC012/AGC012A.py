@@ -1,6 +1,6 @@
 # from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from collections import deque,Counter
+from collections import deque,Counter
 # import re
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from decimal import Decimal, getcontext
@@ -14,12 +14,13 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
 arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+arrA.sort()
+A = arrA[N:]
+# print(A)
+ans = sum(A[::2])
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

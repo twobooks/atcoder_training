@@ -14,12 +14,16 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A = int(input())
+B = int(input())
 
+num = A-B
+if num>0:
+    ans = "GREATER"
+elif num==0:
+    ans = "EQUAL"
+else:
+    ans = "LESS"
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

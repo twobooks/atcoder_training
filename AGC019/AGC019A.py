@@ -14,13 +14,15 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
+Q,H,S,D = map(int,input().split())
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+ltl_1 = min(4*Q,2*H,S)
+lit_2 = min(2*ltl_1,D)
+num1 = N%2
+num2 = N//2
 
+ans = num2 * lit_2 + num1 * ltl_1
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

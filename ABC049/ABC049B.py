@@ -14,16 +14,15 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+# 盤面の受け取り
+H,W = map(int,input().split())
+board = [[] for _ in range(H*2)]
+for i in range(H):
+    board[2*i] = list(input())
+    board[2*i+1] = board[2*i].copy()
 
-
-print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
-# for row in board:
-#     print(*row,sep="")    #unpackして間にスペース入れずに出力する
+for row in board:
+    print(*row,sep="")    #unpackして間にスペース入れずに出力する
 # print("{:.10f}".format(ans))
 # print("{:0=10d}".format(ans))

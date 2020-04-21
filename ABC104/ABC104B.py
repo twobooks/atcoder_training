@@ -1,6 +1,6 @@
 # from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from collections import deque,Counter
+from collections import deque,Counter
 # import re
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from decimal import Decimal, getcontext
@@ -15,13 +15,29 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+def check(S):
+    if S[0]!="A":
+        return False
+    if Counter(S[2:-1])["C"]!=1:
+        return False
+    s_counter = Counter(S)
+    for w in s_counter:
+        if w.isupper():
+            if w == "A":
+                if s_counter[w] != 1:
+                    return False
+            elif w == "C":
+                if s_counter[w] != 1:
+                    return False
+            else:
+                return False
+    return True
 
-print(ans)
+if check(S):
+    print("AC")
+else:
+    print("WA")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

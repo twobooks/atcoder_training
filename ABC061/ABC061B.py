@@ -7,21 +7,21 @@
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
-# import numpy as np
+import numpy as np
 # import networkx as nx
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
 N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+ans = np.zeros(N+1,dtype="int64")
+for i in range(M):
+    a, b = map(int,input().split())
+    ans[a] += 1
+    ans[b] += 1
 
-
-print(ans)
+print(*ans[1:],sep="\n")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

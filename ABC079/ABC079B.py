@@ -2,24 +2,30 @@
 # from itertools import permutations as permus
 # from collections import deque,Counter
 # import re
-# from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
+from functools import lru_cache # @lru_cache(maxsize=1000)
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
 # import numpy as np
-# import networkx as nx
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
-# from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+@lru_cache(maxsize=1000)
+def lucas_number(n) -> int:
+    if n<0:
+        return -1
+    if n==0:
+        return 2
+    elif n==1:
+        return 1
+    else:
+        return lucas_number(n-1)+ lucas_number(n-2)
+
+ans = lucas_number(N)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

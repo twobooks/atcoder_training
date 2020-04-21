@@ -15,11 +15,24 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
 
+i= 0
+ans = 0
+moji1 = ""
+moji2 = ""
+while i < len(S):
+    if i == 0:
+        moji1 = S[i]
+        ans += 1
+    else:
+        moji2 = moji2 + S[i]
+        if moji1 != moji2:
+            ans += 1
+            moji1 = moji2
+            moji2 = ""
+        else:
+            moji2 = moji2 + S[i]
+    i += 1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

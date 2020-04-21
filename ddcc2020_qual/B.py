@@ -7,19 +7,24 @@
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
-# import numpy as np
+import numpy as np
 # import networkx as nx
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+# arrA = list(map(int,input().split()))
+arrA = np.array(input().split(),dtype=np.int64)
 
+arrA = arrA.cumsum()
+high = arrA[-1]
+ans = 2020202020*200000+2
+
+for i in arrA[:-1]:
+    num = abs(high - i*2)
+    ans = min(ans,num)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

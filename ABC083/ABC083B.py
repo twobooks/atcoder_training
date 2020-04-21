@@ -14,12 +14,14 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,A,B = map(int,input().split())
 
+ans = 0
+for i in range(1,N+1):
+    s = str(i)
+    num = sum(map(int,list(s)))
+    if A<=num<=B:
+        ans += i
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

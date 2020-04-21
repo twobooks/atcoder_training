@@ -14,14 +14,16 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+arrT = [0] + list(map(int,input().split()))
+M = int(input())
+PandX = [list(map(int,input().split())) for i in range(M)]
 
+total = sum(arrT)
+for pm in PandX:
+    pnum ,x = pm[0],pm[1]
+    print(total - arrT[pnum] + x)
 
-print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

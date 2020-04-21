@@ -14,14 +14,20 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B,K = map(int,input().split())
 
+slis = []
+llis = []
+if 2*K>=(B-A+1):
+    ans = list(range(A,B+1))
+else:
+    for i in range(K):
+        slis.append(A+i)
+        if not B-i in slis:
+            llis.append(B-i)
+    ans = slis + llis[::-1]
 
-print(ans)
+print(*ans,sep="\n")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

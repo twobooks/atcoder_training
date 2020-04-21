@@ -1,6 +1,6 @@
 # from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations as permus
-# from collections import deque,Counter
+from collections import deque,Counter
 # import re
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from decimal import Decimal, getcontext
@@ -14,12 +14,22 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+X = int(input())
 
+dp = {100:1,101:1,102:1,103:1,104:1,105:1}
+lis = [100,101,102,103,104,105]
+que = deque([100,101,102,103,104,105])
+while len(que)>0:
+    num = que.popleft()
+    for i in lis:
+        dp[num+i] = 1
+        if num+i <= 100000 and not(num+i in que):
+            que.append(num + i)
+
+if X in dp:
+    ans = 1
+else:
+    ans = 0
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

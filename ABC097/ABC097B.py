@@ -14,13 +14,16 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
-
-
+X = int(input())
+ans = 0
+if X == 1:
+    ans = 1
+else:
+    for i in range(2,33):
+        j = i
+        while j*i<=X:
+            ans = max(j*i,ans)
+            j = j*i
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

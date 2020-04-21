@@ -14,12 +14,15 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,A,B = map(int,input().split())
 
+if (B-A)%2==0:
+    ans = (B-A)//2
+elif B-A == 1:
+    ans = min(N-A,B-1)
+else:
+    ans = min(A-1,N-B)
+    ans = (B-A-1)//2 + ans +1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

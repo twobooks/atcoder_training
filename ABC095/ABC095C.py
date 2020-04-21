@@ -14,12 +14,17 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B,C,X,Y = map(int,input().split())
 
+costA = min(A,C*2)
+costB = min(B,C*2)
+costAB = min(A+B,C*2,A+costB,costA+B)
+
+numAB = min(X,Y)
+numA = max(X-Y,0)
+numB = max(Y-X,0)
+
+ans = numA*costA + numB*costB + numAB*costAB
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

@@ -14,13 +14,17 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-arrA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N = input()
 
-
+if int(N)>=10:
+    size = len(N)
+    top = int(N[0])
+    ans = (size-1)*9 + top-1
+    num = sum(map(int,list(N)))
+    ans = max(ans,num)
+else:
+    ans = int(N)
+    
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
