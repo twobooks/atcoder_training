@@ -1,5 +1,5 @@
 # from math import factorial,sqrt,ceil,gcd
-# from itertools import permutations,combinations,combinations_with_replacement
+from itertools import permutations,combinations,combinations_with_replacement
 # from collections import deque,Counter
 # import re
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
@@ -14,11 +14,23 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,M,Q = map(int,input().split())
+times = Q
+abcds = []
+for _ in range(times):
+    abcds.append(list(map(int,input().split()))) # 行列の場合
+AnoMoto = list(range(1,M+1))
+# print(AnoMoto)
+# lenA = len(arrA)
+ans = 0
+for lisA in combinations_with_replacement(AnoMoto,N):
+    # print(lisA)
+    num = 0
+    for abcd in abcds:
+        a,b,c,d = abcd
+        if lisA[b-1] - lisA[a-1] == c:
+            num += d
+        ans = max(ans,num)
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る

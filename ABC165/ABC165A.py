@@ -1,5 +1,5 @@
 # from math import factorial,sqrt,ceil,gcd
-# from itertools import permutations,combinations,combinations_with_replacement
+# from itertools import permutations as permus
 # from collections import deque,Counter
 # import re
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
@@ -14,13 +14,14 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+K = int(input())
+A,B = map(int,input().split())
 
-print(ans)
+for i in range(A,B+1):
+    if i % K == 0:
+        print("OK")
+        exit()
+print("NG")
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

@@ -14,12 +14,9 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
 lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
-
+lisA.sort()
+ans = lisA[0]*lisA[1]//2
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

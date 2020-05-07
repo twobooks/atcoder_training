@@ -14,13 +14,12 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
-
-print(ans)
+X = int(input())
+for A in range(-1000,1001):
+    for B in range(-1000,1001):
+        if A**5 - B**5 == X:
+            print(A,B)
+            exit()
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

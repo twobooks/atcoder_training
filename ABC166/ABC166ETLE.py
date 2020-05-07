@@ -14,12 +14,15 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
 N = int(input())
-N,M = map(int,input().split())
 lisA = list(map(int,input().split()))
 # arrA = np.array(input().split(),dtype=np.int64)
 
+ans = 0
+for i in range(1,N):
+    for j in range(0,N-i):
+        if lisA[j]+lisA[j+i]==i:
+            ans += 1
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

@@ -14,13 +14,18 @@
 # from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,K = map(int,input().split())
+Nset = set(list(range(1,N+1)))
+okasi = []
+shojisha = []
+for _ in range(K):
+    okasi.append(int(input()))
+    shojisha.append(list(map(int,input().split())))
 
-print(ans)
+for lis in shojisha:
+    Nset = Nset - set(lis)
+
+print(len(Nset))
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する
