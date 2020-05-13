@@ -1,29 +1,36 @@
-# from math import factorial,sqrt,ceil #,gcd
+# from math import factorial,sqrt,ceil,gcd
 # from itertools import permutations,combinations,combinations_with_replacement
 # from collections import deque,Counter
 # import re
-# from bisect import bisect_left
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
-# from fractions import gcd
-
 # from decimal import Decimal, getcontext
 # # getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
-# import numpy as np
+import numpy as np
 # import networkx as nx
 # from scipy.sparse.csgraph import shortest_path, dijkstra, floyd_warshall, bellman_ford, johnson
 # from scipy.sparse import csr_matrix
-# from scipy.special import comb,perm #permはnPk
+# from scipy.special import comb
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,M,X = map(int,input().split())
+rows = [list(map(int,input().split())) for _ in range(N)]
+rows = np.array(rows)
 
+ans = 10**5 * N +1
+for bitlines in range(0,1<<N):
+    tmp = np.array([0]*(M+1))
+    for target in range(N):
+        if bitlines>>target & 1:
+            tmp = tmp + rows[target]
+        else:
+            continue
+    if np.bincount((tmp>=X)[1:],minlength=2)[1]==M:
+        ans = min(ans,tmp[0])
+
+if ans == 10**5 * N +1:
+    ans = -1
 
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
