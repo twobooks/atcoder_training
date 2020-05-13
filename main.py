@@ -3,6 +3,7 @@
 # from collections import deque,Counter
 # import re
 # from bisect import bisect_left
+# from heapq import heappush,heappop
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from fractions import gcd
 
