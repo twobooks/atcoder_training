@@ -20,14 +20,16 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N = input()
+num = int(N[-1])
 
+if num in [2,4,5,7,9]:
+    print("hon")
+elif num in [0,1,6,8]:
+    print("pon")
+else:
+    print("bon")
 
-print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

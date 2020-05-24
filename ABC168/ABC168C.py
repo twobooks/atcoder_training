@@ -1,4 +1,4 @@
-# from math import factorial,sqrt,ceil #,gcd
+import math
 # from itertools import permutations,combinations,combinations_with_replacement
 # from collections import deque,Counter
 # import re
@@ -20,13 +20,15 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B,H,M = map(int,input().split())
 
+kakuH = 30 * H + 0.5 * M
+kakuM = 6 * M
 
+naiKaku = abs(kakuH-kakuM)
+
+ans = A**2 + B**2 - 2*A*B*math.cos(math.radians(naiKaku))
+ans = math.sqrt(ans)
 print(ans)
 # print(*ans)   # unpackして出力。間にスペースが入る
 # for row in board:

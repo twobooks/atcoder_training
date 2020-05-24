@@ -20,14 +20,21 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,M,Q = map(int,input().split())
+G = [[] for _ in range(N+1)]
+for _ in range(M):
+    u,v = map(int,input().split())
+    G[u].append(v)
+    G[v].append(u)
+node_colors = [0] + list(map(int,input().split()))
+querys = [list(map(int,input().split())) for _ in range(Q)]
 
-print(ans)
-# for row in board:
-#     print(*row,sep="")    #unpackして間にスペース入れずに出力する
-# print("{:.10f}".format(ans))
-# print("{:0=10d}".format(ans))
+for i in range(Q):
+    qcode = querys[i][0]
+    node_num = querys[i][1]
+    print(node_colors[node_num])
+    if qcode==1:
+        for j in G[node_num]:
+            node_colors[j] = node_colors[node_num]
+    else:
+        node_colors[node_num] = querys[i][2]

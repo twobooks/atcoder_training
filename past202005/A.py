@@ -21,13 +21,11 @@
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
 S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+T = input()
 
-print(ans)
-# for row in board:
-#     print(*row,sep="")    #unpackして間にスペース入れずに出力する
-# print("{:.10f}".format(ans))
-# print("{:0=10d}".format(ans))
+if S == T:
+    print("same")
+elif S.lower() == T.lower():
+    print("case-insensitive")
+else:
+    print("different")

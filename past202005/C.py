@@ -20,14 +20,17 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,R,N = map(int,input().split())
 
+if R == 1:
+    print(A)
+    exit()
+
+ans = A
+for num in range(1,N):
+    ans *= R
+    if ans > 10**9:
+        print("large")
+        exit()
+    
 print(ans)
-# for row in board:
-#     print(*row,sep="")    #unpackして間にスペース入れずに出力する
-# print("{:.10f}".format(ans))
-# print("{:0=10d}".format(ans))
