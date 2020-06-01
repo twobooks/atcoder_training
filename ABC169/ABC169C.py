@@ -7,8 +7,8 @@
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from fractions import gcd
 
-# from decimal import Decimal, getcontext
-# # getcontext().prec = 1000
+from decimal import Decimal, getcontext
+getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
 # import numpy as np    # numpy.lcm()
@@ -17,16 +17,22 @@
 # from scipy.special import comb,perm #permはnPk
 # import networkx as nx
 # G = Graph()
-
+import math
 # slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B = input().split()
+# A = int(A)
+# B = float(B)*10000
 
-print(ans)
+# B = round(B,-2)
+# ans = A*B//10000
+
+A = Decimal(A)
+B = Decimal(B)
+
+ans = A*B
+
+# print(A,B,ans)
+print(int(ans))
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する
 # print("{:.10f}".format(ans))
