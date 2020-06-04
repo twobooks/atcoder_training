@@ -19,32 +19,28 @@ from collections import deque,Counter
 # G = Graph()
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-N,P = map(int,input().split())
+N = int(input())
+lisA = list(map(int,input().split()))
 
-def prime_factorize(n):  #nの素因数分解結果をリストで返す。Counterで素数ごとの指数確認可能 
-    a = []
-    while n % 2 == 0:
-        a.append(2)
-        n //= 2
-    f = 3
-    while f * f <= n:
-        if n % f == 0:
-            a.append(f)
-            n //= f
-        else:
-            f += 2
-    if n != 1:
-        a.append(n)
-    return a
+kv1 = Counter(lisA[0:N:2]).most_common()
+kv2 = Counter(lisA[1:N:2]).most_common()
 
-cnt =Counter(prime_factorize(P))
+if len(kv1)==len(kv2)==1 and kv1[0]==kv2[0]:
+    print(N//2)
+    exit()
 
-ans = 1
-for k,v in cnt.items():
-    if v >= N:
-        ans *= k**(v//N)
+ans1 = N
+ans2 = N
+for i in range(0,N//2-1):
+    try:
+        if kv1[0][0]!=kv2[i][0]:
+            ans1 = min(ans1,N-(kv1[0][1]+kv2[i][1]))
+        if kv1[i][0]!=kv2[0][0]:
+            ans2 = min(ans2,N-(kv1[i][1]+kv2[0][1]))
+    except:
+        pass
 
-print(ans)
+print(min(ans1,ans2))
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する
 # print("{:.10f}".format(ans))
