@@ -8,7 +8,7 @@
 # from fractions import gcd
 
 # from decimal import Decimal, getcontext
-# # getcontext().prec = 1000
+# getcontext().prec = 1000
 # # eps = Decimal(10) ** (-100)
 
 # import numpy as np    # numpy.lcm()
@@ -19,12 +19,11 @@
 # G = Graph()
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+A,B = input().split()
+A = int(A)
+B = int(B.replace(".",""))
+
+ans = (A*B)//100
 
 print(ans)
 # for row in board:

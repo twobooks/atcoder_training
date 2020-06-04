@@ -19,13 +19,19 @@
 # G = Graph()
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,P = map(int,input().split())
 
+if N == 1:
+    print(P)
+    exit()
+
+ans = 1
+i = 1
+while i**N <= P:
+    if P % (i**N)==0:
+        ans = i
+    i += 1
+ 
 print(ans)
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する

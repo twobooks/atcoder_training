@@ -20,11 +20,19 @@
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
 MOD = 10**9 + 7
-S = input()
 N = int(input())
-N,M = map(int,input().split())
 lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+
+ans = lisA[0]
+if 0 in lisA:
+    print(0)
+    exit()
+
+for i in lisA[1:]:
+    ans *= i
+    if ans > 10**18:
+        print(-1)
+        exit()
 
 print(ans)
 # for row in board:

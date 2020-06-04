@@ -18,15 +18,15 @@
 # import networkx as nx
 # G = Graph()
 
-# slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
-N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+N,M,K = map(int,input().split())
 
-print(ans)
+for X in range(0,N+1):
+    for L in range(0,M+1):
+        if X*(M-L)+L*(N-X) == K:
+            print("Yes")
+            exit()
+
+print("No")
 # for row in board:
 #     print(*row,sep="")    #unpackして間にスペース入れずに出力する
 # print("{:.10f}".format(ans))

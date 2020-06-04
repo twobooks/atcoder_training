@@ -1,8 +1,8 @@
 # from math import factorial,sqrt,ceil #,gcd
 # from itertools import permutations,combinations,combinations_with_replacement
-# from collections import deque,Counter
+from collections import deque,Counter
 # from bisect import bisect_left
-# from heapq import heappush,heappop
+from heapq import heapify,heappush,heappop
 # from numba import njit
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from fractions import gcd
@@ -19,15 +19,39 @@
 # G = Graph()
 
 # slist = "abcdefghijklmnopqrstuvwxyz"
-MOD = 10**9 + 7
-S = input()
 N = int(input())
-N,M = map(int,input().split())
-lisA = list(map(int,input().split()))
-# arrA = np.array(input().split(),dtype=np.int64)
+
+def prime_factorize(n):
+    a = []
+    while n % 2 == 0:
+        a.append(2)
+        n //= 2
+    f = 3
+    while f * f <= n:
+        if n % f == 0:
+            a.append(f)
+            n //= f
+        else:
+            f += 2
+    if n != 1:
+        a.append(n)
+    return a
+
+if N == 1:
+    print(0)
+    exit()
+
+ans = 0
+cnt_primes = Counter(prime_factorize(N))
+
+for i in cnt_primes:
+    j = 1
+    while cnt_primes[i]>=0:
+        cnt_primes[i] -= j
+        if cnt_primes[i]>=0:
+            ans += 1
+        else:
+            break
+        j += 1
 
 print(ans)
-# for row in board:
-#     print(*row,sep="")    #unpackして間にスペース入れずに出力する
-# print("{:.10f}".format(ans))
-# print("{:0=10d}".format(ans))
