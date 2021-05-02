@@ -2,7 +2,7 @@
 # from itertools import permutations,combinations,combinations_with_replacement
 # from collections import deque,Counter
 # from bisect import bisect_left
-# from heapq import heappush,heappop
+# from heapq import heapify,,heappush,heappop
 # from numba import njit
 # from functools import lru_cache # 簡単メモ化 @lru_cache(maxsize=1000)
 # from fractions import gcd
