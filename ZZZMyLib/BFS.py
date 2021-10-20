@@ -1,4 +1,4 @@
-# 幅優先探索
+# 幅優先探索 O(V+E)
 from collections import deque
 
 R,C = list(map(int,input().split()))
